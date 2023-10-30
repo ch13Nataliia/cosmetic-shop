@@ -1,5 +1,17 @@
-import '@/styles/globals.css'
+import '@/styles/globals.css';
+
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '@/lib/theme';
+import CssBaseline from '@mui/material/CssBaseline';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <CssBaseline />
+
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
+  );
 }
