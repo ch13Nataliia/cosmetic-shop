@@ -1,10 +1,9 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import sgMail from '@sendgrid/mail';
+import sgMail from "@sendgrid/mail";
 const { ADMIN_EMAIL, SENDGRID_API_KEY } = process.env;
 sgMail.setApiKey(SENDGRID_API_KEY);
 
 const handler = async (req, res) => {
-  const {from, subject, message} = req.body;
+  const {from, subject, message} = req.body
   const msg = {
     to: from,
     cc: ADMIN_EMAIL,
@@ -28,4 +27,5 @@ const handler = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
 export default handler;
