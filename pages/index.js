@@ -1,10 +1,11 @@
 import Head from 'next/head';
 // import Image from 'next/image';
-import { Inter } from 'next/font/google';
+import { Inter, Pragati_Narrow } from 'next/font/google';
 
-import { Button } from '@/components/mui/index.js';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Button, DeleteIcon } from '@/components/mui/index.js';
 import Layout from '@/components/Layout';
+import Heading from '@/components/Heading';
+import Paragraph from '@/components/Paragraph';
 // const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-      <h2>Home Page</h2>
+      <Heading component='h2' variant="h3">Home Page</Heading>
+      <Paragraph> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quia doloremque rerum eius modi unde deserunt? Velit eveniet sequi similique nam magni facilis nemo enim cum reprehenderit, quasi minus quod.</Paragraph>
         <Button variant='contained'>
           <DeleteIcon />Delete
         </Button>
