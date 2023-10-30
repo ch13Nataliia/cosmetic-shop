@@ -1,13 +1,13 @@
 import Head from 'next/head';
-// import Image from 'next/image';
-import { Inter } from 'next/font/google';
+import Image from 'next/image';
+// import { Inter } from 'next/font/google';
 
-import { Button } from '@/components/mui/index.js';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Button, DeleteIcon } from '@/components/mui/index';
+
 import Layout from '@/components/Layout';
 // const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
+export default function Contact() {
   return (
     <>
       <Head>
@@ -17,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-      <h2>Home Page</h2>
+        <h2>Contact Page</h2>
         <Button variant='contained'>
           <DeleteIcon />Delete
         </Button>
