@@ -18,7 +18,27 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import EditIcon from '@mui/icons-material/Edit';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import ChatIcon from '@mui/icons-material/Chat';
+import SettingsPhoneIcon from '@mui/icons-material/SettingsPhone';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
 export {
+  Paper,
+  Grid,
+  SettingsPhoneIcon,
+  WhatsAppIcon,
+  ChatIcon,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
   Drawer,
   Divider,
   AppBar,

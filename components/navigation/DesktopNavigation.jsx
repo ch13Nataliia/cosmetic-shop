@@ -46,6 +46,13 @@ function DesktopNavigation({
             Cosmetics Shop
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Button
+              sx={{ color: lightTextColor }}
+              component={Link}
+              href="/blog"
+            >
+              Services
+            </Button>
             <Button
               sx={{ color: lightTextColor }}
               component={Link}

@@ -101,14 +101,14 @@ export default function ContactForm({ submitHandler }) {
               label="message"
               fullWidth
               multiline
-              rows={10}
+              rows={8}
               helperText={errors.message?.message}
             />
           )}
         />
       </div>
 
-      <div style={{ marginTop: 20 }}>
+      <div style={{ marginTop: 20 }} >
         <Button
           type="reset"
           onClick={() => reset()}

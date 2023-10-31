@@ -1,14 +1,31 @@
 import Head from 'next/head';
 import Image from 'next/image';
+
+import { experimentalStyled as styled } from '@mui/material/styles';
+
 // import { Inter } from 'next/font/google';
 import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import ContactForm from '@/components/forms/ContacForm';
-import { Button, DeleteIcon } from '@/components/mui/index';
+import {
+  Grid,
+  Paper,
+  Box,
+  ChatIcon,
+  SettingsPhoneIcon,
+  WhatsAppIcon,
+} from '@/components/mui/index';
 import { sendEmail } from '@/lib/api-functions/client';
 
 import Layout from '@/components/Layout';
 // const inter = Inter({ subsets: ['latin'] });
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(2),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 export default function Contact() {
   return (
@@ -20,16 +37,111 @@ export default function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h2" variant="h3">
-          Contact Us
-        </Heading>
-        <Paragraph>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-          quas quo voluptatum voluptatem vel reiciendis dolor necessitatibus
-          nulla fuga quisquam ea, asperiores, earum eligendi? Nam dignissimos
-          maxime voluptatem dolor nostrum.
+        <Paragraph component="h2" variant="h3" sx={{ textAlign: 'center' }}>
+          Customer Care
         </Paragraph>
-        <ContactForm submitHandler={sendEmail}/>
+        <Paragraph sx={{ textAlign: 'center' }}>
+          For instant customer service support, including help with your order,
+          product or beauty advice, the below options are available.
+        </Paragraph>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+ 
+          >
+            <Grid item xs={4} sm={4} md={4} sx={{ cursor: 'pointer' }}>
+              <Item>
+                <Paragraph>
+                  <SettingsPhoneIcon />
+                </Paragraph>
+
+                <Heading component="h2" variant="h4">
+                  Call Us
+                </Heading>
+                <Paragraph>Talk to us directly on</Paragraph>
+                <Paragraph>
+                  <strong>0808 281 0228.</strong>
+                </Paragraph>
+              </Item>
+            </Grid>
+
+            <Grid item xs={4} sm={4} md={4} sx={{ cursor: 'pointer' }}>
+              <Item>
+                <Paragraph>
+                  <WhatsAppIcon />
+                </Paragraph>
+
+                <Heading component="h2" variant="h4">
+                  Whatsapp
+                </Heading>
+                <Paragraph>add number to your contact list.</Paragraph>
+                <Paragraph>
+                  <strong>+4420 45 790 611 </strong>
+                </Paragraph>
+              </Item>
+            </Grid>
+            <Grid item xs={4} sm={8} md={4} sx={{ cursor: 'pointer' }}>
+              <Item>
+                <Paragraph>
+                  <ChatIcon />
+                </Paragraph>
+
+                <Heading component="h2" variant="h4">
+                  Chat to Us
+                </Heading>
+                <Paragraph>Chat now with a beauty advisor.</Paragraph>
+                <Paragraph>
+                  <strong>LIVE CHAT</strong>
+                </Paragraph>
+              </Item>
+            </Grid>
+
+            <Grid item xs={4} sm={8} md={6} sx={{ cursor: 'pointer' }}>
+              <Item>
+                <Paragraph>
+                  <SettingsPhoneIcon />
+                </Paragraph>
+
+                <Heading component="h2" variant="h4">
+                  Head Office
+                </Heading>
+                <Paragraph>
+                  For queries regarding PR, Marketing or any other Head Office
+                  Departments, call
+                </Paragraph>
+                <Paragraph>
+                  <strong>0370 034 6700.</strong>
+                </Paragraph>
+              </Item>
+            </Grid>
+
+            <Grid item xs={4} sm={8} md={6} sx={{ cursor: 'pointer' }}>
+              <Item>
+                <Paragraph>
+                  <SettingsPhoneIcon />
+                </Paragraph>
+
+                <Heading component="h2" variant="h4">
+                  eGift Card Enquiries
+                </Heading>
+                <Paragraph>
+                  For any queries regarding eGift Cards, call Voucher Express on
+                </Paragraph>
+                <Paragraph>
+                  <strong> 08081 782066.</strong>
+                </Paragraph>
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
+        <Paragraph component="h2" variant="h3" sx={{ textAlign: 'center' }}>Contact Us</Paragraph>
+        <ContactForm submitHandler={sendEmail} />
+        <Box sx={{ textAlign: 'center', background: "#e3f0d3"}} style={{ marginTop: 20 }} >
+          <Paragraph  variant="h5">Free Delivery and Returns</Paragraph>
+          <Paragraph ><strong>RETURN YOUR ORDER WITH 3 SIMPLE STEPS</strong></Paragraph>
+        </Box>
       </Layout>
     </>
   );
