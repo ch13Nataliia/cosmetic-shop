@@ -1,6 +1,7 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import Paragraph from '@/components/Paragraph';
 import {
   List,
   ListItem,
@@ -8,14 +9,19 @@ import {
   CardMedia,
   CardContent,
   CardActions,
-Typography,
-} from "@/components/mui";
-import Layout from "@/components/Layout";
-import Heading from "@/components/Heading";
-import { AllPosts } from "@/lib/hygraph/queries";
+  Typography,
+  Container,
+  Divider,
+  Stack,
+  Box,
+  Grid,
+} from '@/components/mui';
+import Layout from '@/components/Layout';
+import Heading from '@/components/Heading';
+import { AllPosts } from '@/lib/hygraph/queries';
 
 export default function Blog({ ssd = [] }) {
-  console.log("ssd", ssd);
+  console.log('ssd', ssd);
   return (
     <>
       <Head>
@@ -25,29 +31,44 @@ export default function Blog({ ssd = [] }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
+        <Paragraph component="h2" variant="h3" sx={{ textAlign: 'center' }}>
+          Beauty Services
+        </Paragraph>
+        <Paragraph
+          Paragraph
+          component="h2"
+          variant="h6"
+          sx={{ textAlign: 'center' }}
+        >
+          Discover everything esteelauder.co.uk has to offer— from the comfort
+          of your own home.
+        </Paragraph>
 
-                <Heading component="h2">Beauty Services</Heading>
-        <Typography  variant="subtitle1" >Discover everything esteelauder.co.uk has to offer—
-from the comfort of your own home.</Typography>
-
-
-        <List component={"ol"} sx={{ listStyle: "none", display: "grid",}} >
+        <Grid
+          container
+          spacing={{ xs: 2, md: 4 }}
+          columns={{ xs: 4, sm: 6, md: 12, lg: 12 }}
+        >
           {ssd.map(({ id, title, slug, heroImage: { url } }) => (
-            <ListItem key={id}>
-              <Card component={"article"} sx={{ width: "100%" }}>
-                <CardMedia sx={{ display: "grid", placeContent: "center" }}>
-                  <Image alt={title} src={url} width="200" height="200" />
+            <Grid item xs={4} sm={8} md={6} key={id}>
+              <Card component={'article'} sx={{ width: '100%' }}>
+                <CardMedia
+                  sx={{ display: 'grid', placeContent: 'center', marginTop: 5 }}
+                >
+                  <Image alt={title} src={url} width="300" height="300" />
                 </CardMedia>
                 <CardContent>
-                  <Heading component="h2">{title}</Heading>
+                  <Heading component="h2" variant="h5">
+                    {title}
+                  </Heading>
                 </CardContent>
                 <CardActions>
                   <Link href={`/blog/${slug}`}>Read more...</Link>
                 </CardActions>
               </Card>
-            </ListItem>
+            </Grid>
           ))}
-        </List>
+        </Grid>
       </Layout>
     </>
   );
@@ -55,9 +76,9 @@ from the comfort of your own home.</Typography>
 
 export const getStaticProps = async () => {
   const allPosts = await fetch(process.env.HYGRAPH_ENDPOINT, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": `application/json; charset="UTF-8`,
+      'Content-Type': `application/json; charset="UTF-8`,
       Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
     },
     body: JSON.stringify({

@@ -25,11 +25,11 @@ import CardActions from '@mui/material/CardActions';
 import ChatIcon from '@mui/icons-material/Chat';
 import SettingsPhoneIcon from '@mui/icons-material/SettingsPhone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-
+import Stack from '@mui/material/Stack';
 export {
+  Stack,
   Paper,
   Grid,
   SettingsPhoneIcon,
