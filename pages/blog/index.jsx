@@ -3,17 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Paragraph from '@/components/Paragraph';
 import {
-  List,
-  ListItem,
+  // List,
+  // ListItem,
   Card,
   CardMedia,
   CardContent,
   CardActions,
-  Typography,
-  Container,
-  Divider,
-  Stack,
-  Box,
+  // Typography,
+  // Container,
+  // Divider,
+  // Stack,
+  // Box,
   Grid,
 } from '@/components/mui';
 import Layout from '@/components/Layout';

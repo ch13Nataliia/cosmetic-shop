@@ -22,7 +22,7 @@ export default function BlogPost({ ssd = {} }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h2">Single Post</Heading>
+        <Heading component="h2" variant="h4">Single Post</Heading>
         <Card component={'article'} sx={{ width: '100%' }}>
           <CardMedia sx={{ display: 'grid', placeContent: 'center' }}>
             <Image alt={title} src={url} width="200" height="200" />
