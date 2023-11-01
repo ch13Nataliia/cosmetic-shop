@@ -1,11 +1,10 @@
 import Head from 'next/head';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 import { experimentalStyled as styled } from '@mui/material/styles';
 
 // import { Inter } from 'next/font/google';
 import Heading from '@/components/Heading';
-import Paragraph from '@/components/Paragraph';
 import ContactForm from '@/components/forms/ContacForm';
 import {
   Grid,
@@ -14,6 +13,7 @@ import {
   ChatIcon,
   SettingsPhoneIcon,
   WhatsAppIcon,
+  Typography,
 } from '@/components/mui/index';
 import { sendEmail } from '@/lib/api-functions/client';
 
@@ -37,110 +37,116 @@ export default function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Paragraph component="h2" variant="h3" sx={{ textAlign: 'center' }}>
+        <Typography component="h2" variant="h3" sx={{ textAlign: 'center' }}>
           Customer Care
-        </Paragraph>
-        <Paragraph sx={{ textAlign: 'center' }}>
+        </Typography>
+        <Typography sx={{ textAlign: 'center' }}>
           For instant customer service support, including help with your order,
           product or beauty advice, the below options are available.
-        </Paragraph>
+        </Typography>
         <Box sx={{ flexGrow: 1 }}>
           <Grid
             container
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
- 
           >
             <Grid item xs={4} sm={4} md={4} sx={{ cursor: 'pointer' }}>
               <Item>
-                <Paragraph>
+                <Typography>
                   <SettingsPhoneIcon />
-                </Paragraph>
+                </Typography>
 
                 <Heading component="h2" variant="h4">
                   Call Us
                 </Heading>
-                <Paragraph>Talk to us directly on</Paragraph>
-                <Paragraph>
+                <Typography>Talk to us directly on</Typography>
+                <Typography>
                   <strong>0808 281 0228.</strong>
-                </Paragraph>
+                </Typography>
               </Item>
             </Grid>
 
             <Grid item xs={4} sm={4} md={4} sx={{ cursor: 'pointer' }}>
               <Item>
-                <Paragraph>
+                <Typography>
                   <WhatsAppIcon />
-                </Paragraph>
+                </Typography>
 
                 <Heading component="h2" variant="h4">
                   Whatsapp
                 </Heading>
-                <Paragraph>add number to your contact list.</Paragraph>
-                <Paragraph>
+                <Typography>add number to your contact list.</Typography>
+                <Typography>
                   <strong>+4420 45 790 611 </strong>
-                </Paragraph>
+                </Typography>
               </Item>
             </Grid>
             <Grid item xs={4} sm={8} md={4} sx={{ cursor: 'pointer' }}>
               <Item>
-                <Paragraph>
+                <Typography>
                   <ChatIcon />
-                </Paragraph>
+                </Typography>
 
                 <Heading component="h2" variant="h4">
                   Chat to Us
                 </Heading>
-                <Paragraph>Chat now with a beauty advisor.</Paragraph>
-                <Paragraph>
+                <Typography>Chat now with a beauty advisor.</Typography>
+                <Typography>
                   <strong>LIVE CHAT</strong>
-                </Paragraph>
+                </Typography>
               </Item>
             </Grid>
 
             <Grid item xs={4} sm={8} md={6} sx={{ cursor: 'pointer' }}>
               <Item>
-                <Paragraph>
+                <Typography>
                   <SettingsPhoneIcon />
-                </Paragraph>
+                </Typography>
 
                 <Heading component="h2" variant="h4">
                   Head Office
                 </Heading>
-                <Paragraph>
+                <Typography>
                   For queries regarding PR, Marketing or any other Head Office
                   Departments, call
-                </Paragraph>
-                <Paragraph>
+                </Typography>
+                <Typography>
                   <strong>0370 034 6700.</strong>
-                </Paragraph>
+                </Typography>
               </Item>
             </Grid>
 
             <Grid item xs={4} sm={8} md={6} sx={{ cursor: 'pointer' }}>
               <Item>
-                <Paragraph>
+                <Typography>
                   <SettingsPhoneIcon />
-                </Paragraph>
+                </Typography>
 
                 <Heading component="h2" variant="h4">
                   eGift Card Enquiries
                 </Heading>
-                <Paragraph>
+                <Typography>
                   For any queries regarding eGift Cards, call Voucher Express on
-                </Paragraph>
-                <Paragraph>
+                </Typography>
+                <Typography>
                   <strong> 08081 782066.</strong>
-                </Paragraph>
+                </Typography>
               </Item>
             </Grid>
           </Grid>
         </Box>
-        <Paragraph component="h2" variant="h3" sx={{ textAlign: 'center' }}>Contact Us</Paragraph>
+        <Typography component="h2" variant="h3" sx={{ textAlign: 'center' }}>
+          Contact Us
+        </Typography>
         <ContactForm submitHandler={sendEmail} />
-        <Box sx={{ textAlign: 'center', background: "#e3f0d3"}} style={{ marginTop: 20 }} >
-          <Paragraph  variant="h5">Free Delivery and Returns</Paragraph>
-          <Paragraph ><strong>RETURN YOUR ORDER WITH 3 SIMPLE STEPS</strong></Paragraph>
+        <Box
+          sx={{ textAlign: 'center', background: '#e3f0d3' }}
+          style={{ marginTop: 20 }}
+        >
+          <Typography variant="h5">Free Delivery and Returns</Typography>
+          <Typography>
+            <strong>RETURN YOUR ORDER WITH 3 SIMPLE STEPS</strong>
+          </Typography>
         </Box>
       </Layout>
     </>

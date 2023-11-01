@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Paragraph from '@/components/Paragraph';
+
 import {
   // List,
   // ListItem,
@@ -9,13 +9,9 @@ import {
   CardMedia,
   CardContent,
   CardActions,
-  // Typography,
-  // Container,
-  // Divider,
-  // Stack,
-  // Box,
+  Typography,
   Grid,
-} from '@/components/mui';
+} from '@/components/mui/index';
 import Layout from '@/components/Layout';
 import Heading from '@/components/Heading';
 import { AllPosts } from '@/lib/hygraph/queries';
@@ -31,18 +27,18 @@ export default function Blog({ ssd = [] }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Paragraph component="h2" variant="h3" sx={{ textAlign: 'center' }}>
+        <Typography component="h2" variant="h3" sx={{ textAlign: 'center' }}>
           Beauty Services
-        </Paragraph>
-        <Paragraph
-          Paragraph
+        </Typography>
+        <Typography
+          Typography
           component="h2"
           variant="h6"
           sx={{ textAlign: 'center' }}
         >
           Discover everything esteelauder.co.uk has to offer— from the comfort
           of your own home.
-        </Paragraph>
+        </Typography>
 
         <Grid
           container

@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import Header from '@/components/Header';
 import {
   Container,
-  Alert,
-  Snackbar,
-  IconButton,
-  CloseIcon,
-} from '@/components/mui';
+  // Alert,
+  // Snackbar,
+  // IconButton,
+  // CloseIcon,
+} from '@/components/mui/index';
 // import { UIContext } from "./contexts/UI.context";
 
 function Layout({children}) {
